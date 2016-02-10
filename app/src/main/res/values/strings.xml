@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Teste2</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="BotaoAbrirInterface">Abrir Interface</string>
+    <string name="TextoAPIKEY">Read API_Key</string>
+    <string name="TextoEndereco">Endereço do servidor WEB</string>
+    <string name="TextoConfiguracoes">Configurações:</string>
+</resources>
