@@ -86,6 +86,14 @@ public class MainA extends ActionBarActivity {
                 WebSettings ws = wvTelaOnline.getSettings();
                 ws.setJavaScriptEnabled(true);
 
+                // Oculta os outros elementos
+                findViewById(R.id.txtEndereco).setVisibility(View.INVISIBLE);
+                findViewById(R.id.txtApiKey).setVisibility(View.INVISIBLE);
+                findViewById(R.id.btnAbrir).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tvApiKey).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tvEndereco).setVisibility(View.INVISIBLE);
+                findViewById(R.id.tvConfig).setVisibility(View.INVISIBLE);
+
                 // Deixa a tela web visivel (inicialmente está invisível)
                 wvTelaOnline.setVisibility(View.VISIBLE);
 
@@ -93,11 +101,20 @@ public class MainA extends ActionBarActivity {
                 wvTelaOnline.loadUrl(EnderecoCompleto);
 
                 // Redireciona ao webBrowser links para outras páginas
-                wvTelaOnline.setWebViewClient(new myWebView());
+                //wvTelaOnline.setWebViewClient(new myWebView());
             }
         });
     }
 
+    // Prevent the back-button from closing the app
+    @Override
+    public void onBackPressed() {
+        if(wvTelaOnline.canGoBack()) {
+            wvTelaOnline.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     //@Override
     //public boolean onCreateOptionsMenu(Menu menu) {
