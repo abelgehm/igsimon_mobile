@@ -43,8 +43,8 @@ public class MainA extends ActionBarActivity {
         // Inteface com o sistema de configurações
         SharedPreferences Opcoes = this.getPreferences(MODE_PRIVATE);
         // Carrega as configurações
-        servidor = Opcoes.getString("servidor", "");
-        ApiKey = Opcoes.getString("apikey", "");
+        servidor = Opcoes.getString("servidor", "simon-gpsnetcms.rhcloud.com");
+        ApiKey = Opcoes.getString("apikey", "c81bbccaea12ec521aa32528b8ce4b41");
         // Sincroniza as configurações com a interface gráfica
         Servidor.setText(servidor);
         APIKEY.setText(ApiKey);
