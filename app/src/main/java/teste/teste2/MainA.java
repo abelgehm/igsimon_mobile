@@ -14,21 +14,44 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.preference.PreferenceManager;
 
+/**
+ * Subrotina principal, respons&aacute;vel por apresentar a tela apresentar a tela inicial com os valores salvos previamente, ocultar a interface de configura&ccedil;&atilde;o e exibir a tela do servidor web.
+ */
 public class MainA extends ActionBarActivity {
 
     // Interface com o botão da interface principal
+    /**
+     * Bot&atilde;o virtual para abrir a interface.
+     */
     private Button btnAbrirInterface;
     // Interface com a caixa de texto apikey da interface principal
+    /**
+     * Caixa de texto virtual para a chave de autentica&ccedil;&atilde;o.
+     */
     private EditText APIKEY;
     // Nome do servidor fornecido pelo operador retirado da interface pricipal
+    /**
+     * String contendo a chave de autentica&ccedil;&atilde;o.
+     */
     private String ApiKey = "";
     // Interface com a caixa de texto endereço do seridor da interface principal
+    /**
+     * Caixa de texto virtual para o endere&ccedil;o do servidor web.
+     */
     private EditText Servidor;
     // Endereço do servidor fornecido pelo operador
+    /**
+     * Endere&ccdil;o do servidor web armazenado na mem&oacute;ria.
+     */
     public static String servidor = "";
     // Tela do navegador web embutido no aplicativo
+    /**
+     * Navegador virtual para exibir os dados do servidor.
+     */
     private WebView wvTelaOnline;
-
+    /**
+     * Apresenta a tela inicial do aplicativo, bem como configura os valores iniciais de endere&ccedil;o do servidor e chave de autentica&ccedil;&atilde;o.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +74,9 @@ public class MainA extends ActionBarActivity {
 
         // Define a rotina do botão "abrir interface"
         btnAbrirInterface.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Subtotina disparada ao clicar no bot&atilde;o abrir interface.
+             */
             @Override
             public void onClick(View v) {
                 // Endereço completo = servidor + script.php + argumentos (GET)
@@ -107,6 +133,10 @@ public class MainA extends ActionBarActivity {
     }
 
     // Prevent the back-button from closing the app
+
+    /**
+     * Permite que o aplicativo seja encerrado ou o a tela do servidor apresente o valor anterior.
+     */
     @Override
     public void onBackPressed() {
         if(wvTelaOnline.canGoBack()) {

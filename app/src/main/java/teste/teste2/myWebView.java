@@ -6,9 +6,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * Created by A1 on 10/02/2016.
+ * C&oacute;digo respons&aacute;vel por limitar o acesso ao servidor selecionado.
  */
 public class myWebView extends WebViewClient{
+    /**
+     * Subrotina respons&aacute;vel por limitar o acesso ao servidor apenas.
+     */
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         //if (Uri.parse(url).getHost().endsWith(MainA.servidor)) {
